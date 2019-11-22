@@ -1,0 +1,30 @@
+{
+    "name": "amigamike/pandaman",
+    "description": "PHP package to allow communication with Slack",
+    "keywords": ["php","slack","amigamike"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Mike Welsh",
+            "email": "mike@amigamike.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "AmigaMike\\Pandaman\\": "src/app/" 
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AmigaMike\\Pandaman\\Tests\\": "src/tests/"
+        }
+    }
+}
