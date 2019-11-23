@@ -17,13 +17,18 @@ class Client
     /**
      * Guzzle client.
      */
-    private $guzzle = null;
-
-    private $token = '';
+    private $guzzle = null;    
 
     public function __construct()
     {
-        $this->guzzle = new Guzzle();
+        $this->guzzle = new Guzzle(
+            [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $GLOBALS['slack']['bot_access_token'],
+                    'Content-type' => 'application/json'
+                ]
+            ]
+        );
     }
 
     public function send(string $channel, string $message)
@@ -31,9 +36,11 @@ class Client
         $response = $this->guzzle->post(
             'https://slack.com/api/chat.postMessage',
             [
-                "token" => $GLOBALS['slack']['bot_access_token'],
-                "channel" => $channel,
-                "text" => $message
+                "json" => [
+                    "channel" => $channel,
+                    "text" => $message,
+                    "username" => $GLOBALS['slack']['username']
+                ]
             ]
         );
     }
