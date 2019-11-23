@@ -8,7 +8,7 @@
  * @link        https://amigamike.com
  * @version     0.0.1
  */
-namespace AmigaMike\Pandaman\Pandaman;
+namespace AmigaMike\Pandaman;
 
 use AmigaMike\Pandaman\Controllers\Client;
 
