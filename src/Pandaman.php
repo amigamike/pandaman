@@ -16,6 +16,6 @@ class Pandaman extends Client
 {
     public function __construct()
     {
-        //
+        parent::__construct();
     }
 }
