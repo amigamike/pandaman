@@ -10,7 +10,9 @@
  */
 namespace AmigaMike\Pandaman\Pandaman;
 
-class Pandaman
+use AmigaMike\Pandaman\Controllers\Client;
+
+class Pandaman extends Client
 {
     public function __construct()
     {
